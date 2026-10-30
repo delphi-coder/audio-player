@@ -1,0 +1,25 @@
+# Delphi compiler and IDE outputs
+*.dcu
+*.local
+*.identcache
+*.stat
+*.map
+*.drc
+*.rsm
+*.tds
+*.dsk
+*.~*
+__history/
+ModelSupport_*/
+Win32/
+Win64/
+Debug/
+Release/
+
+# Local/editor files
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
