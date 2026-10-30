@@ -26,4 +26,6 @@ Original authors: Mohammad Samadpour and Vahid Nasehi.
 
 Refactored and prepared for the ALTEK educational archive.
 
-No open-source license has been asserted for this historical source package. Unless a license is added by the rights holders, normal copyright rules apply.
+## License
+
+Released under the [MIT License](LICENSE).
