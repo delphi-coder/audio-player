@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#090b12">
   <title>ALTEK Audio Player — Delphi / Win32</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enhancements.css">
 </head>
 <body>
   <header><a class="brand" href="#top"><i></i> ALTEK Audio Player</a><nav><a href="#features">Features</a><a href="#build">Build</a><a href="https://github.com/delphi-coder/audio-player">GitHub</a></nav></header>
@@ -18,13 +19,17 @@
         <p class="lead">A preserved and modernized Delphi player with DirectSound effects, DirectShow decoding, waveform rendering, FFT spectrum analysis, and LED-style VU meters.</p>
         <div class="actions"><a class="button primary" href="https://github.com/delphi-coder/audio-player/releases/latest/download/audio-player-win32.zip">Download Win32</a><a class="button" href="https://github.com/delphi-coder/audio-player">Browse source</a></div>
       </div>
-      <div class="visual" aria-label="Animated audio spectrum illustration">
-        <div class="disc"><span></span></div>
-        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="now"><small>NOW PLAYING</small><strong>DirectSound / Delphi</strong><div><b></b></div></div>
-      </div>
+      <figure class="app-shot">
+        <div class="window-bar"><span></span><span></span><span></span><strong>DSTest.exe</strong></div>
+        <img src="audio-player-delphi.png" alt="ALTEK Audio Player running on Windows with effects, VU meters, waveform and spectrum displays">
+        <figcaption>Real application output · DirectSound effects, dual VU meters, waveform and live spectrum</figcaption>
+      </figure>
     </section>
     <section class="strip"><span>DIRECTSOUND</span><b>◆</b><span>DIRECTSHOW</span><b>◆</b><span>FFT SPECTRUM</span><b>◆</b><span>WAVEFORM</span><b>◆</b><span>VU METERS</span></section>
+    <section class="facts" aria-label="Project information">
+      <div><small>LANGUAGE</small><strong>Delphi / Object Pascal</strong></div><div><small>UI</small><strong>VCL</strong></div><div><small>PLAYBACK</small><strong>DirectSound</strong></div>
+      <div><small>DECODING</small><strong>DirectShow</strong></div><div><small>TESTED</small><strong>Delphi 7 · RAD Studio 13</strong></div><div><small>TARGET</small><strong>Windows Win32</strong></div>
+    </section>
     <section class="section" id="features">
       <p class="eyebrow">Inside the player</p><h2>A real Win32 audio project.</h2>
       <div class="grid">
@@ -33,8 +38,14 @@
         <article><em>03</em><h3>Lean decoding</h3><p>MP3 and WAV input through Windows DirectShow and Sample Grabber, without a bundled codec library.</p></article>
       </div>
     </section>
+    <section class="section deep-dive">
+      <div><p class="eyebrow">More than play and stop</p><h2>Explore the signal.</h2><p>The project decodes audio to PCM, fills a DirectSound buffer, and turns the same sample data into useful visual feedback. It stays compact enough to study without hiding the interesting parts behind a large framework.</p>
+        <ul><li>Open and play ordinary WAV and MP3 files</li><li>Zoomable waveform and live FFT spectrum</li><li>Independent left/right LED-style VU meters</li><li>Volume, pan, frequency and playback-position controls</li><li>Chorus, compressor, distortion, echo, flanger, gargle, ParamEQ and reverb</li></ul>
+      </div>
+      <div class="signal-card" aria-hidden="true"><div class="meter"><i></i><i></i></div><div class="spectrum"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="wave"></div><small>PCM VISUALIZATION / 44.1 KHZ / 16 BIT / STEREO</small></div>
+    </section>
     <section class="section build" id="build">
-      <div><p class="eyebrow">Source included</p><h2>Build with Delphi.</h2><p>Open <code>DSTest.dpr</code> in Delphi 7 or modern RAD Studio and target Win32. DirectX Pascal headers are included for Delphi 7 compatibility.</p></div>
+      <div><p class="eyebrow">Source included</p><h2>Build with Delphi.</h2><p>Open <code>DSTest.dpr</code> in Delphi 7 or modern RAD Studio and target Win32. DirectX Pascal headers are included for Delphi 7 compatibility.</p><p class="note">MP3 decoding depends on the DirectShow filters installed on Windows. The player keeps decoded audio in memory, so short tracks are the best fit for this educational design.</p></div>
       <pre><code>audio-player-delphi-source/
 ├── DSTest.dpr
 ├── MainUnit.pas
